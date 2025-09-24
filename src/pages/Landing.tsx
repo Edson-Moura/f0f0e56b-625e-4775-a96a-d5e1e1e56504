@@ -443,15 +443,54 @@ const Landing = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t">
+      <footer className="py-12 border-t bg-background">
         <div className="container-mobile mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <ChefHat className="h-6 w-6 text-primary" />
-              <span className="font-bold text-lg">RestaurantApp</span>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Logo e Descrição */}
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center space-x-3 mb-4">
+                <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-8 w-12" />
+                <span className="font-bold text-lg">FoodFlow</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                Sistema completo de gestão para restaurantes. Controle estoque, cardápio, preços e muito mais.
+              </p>
             </div>
-            <div className="text-sm text-muted-foreground">
-              © 2024 RestaurantApp. Todos os direitos reservados.
+
+            {/* Recursos */}
+            <div>
+              <h4 className="font-semibold mb-4">Recursos</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Gestão de Estoque</li>
+                <li>Controle de Cardápio</li>
+                <li>Análise de Preços</li>
+                <li>Relatórios Avançados</li>
+                <li>Previsão de Demanda</li>
+              </ul>
+            </div>
+
+            {/* Suporte */}
+            <div>
+              <h4 className="font-semibold mb-4">Suporte</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Central de Ajuda</li>
+                <li>Documentação</li>
+                <li>Tutoriais</li>
+                <li>Contato</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="border-t pt-8 mt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="text-sm text-muted-foreground mb-4 md:mb-0">
+                © 2024 FoodFlow. Todos os direitos reservados.
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Desenvolvido com ❤️ para restaurantes
+              </div>
             </div>
           </div>
         </div>
