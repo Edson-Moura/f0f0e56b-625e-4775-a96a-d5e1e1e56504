@@ -13,10 +13,20 @@ import { SubscriptionStatus } from '@/components/ui/subscription-status';
 import Landing from './Landing';
 
 const Index = () => {
+  console.log("🚀 Index.tsx: Componente Index renderizado");
+  
   const navigate = useNavigate();
   const { user, signOut, loading } = useAuth();
   const { currentRestaurant, userRole, loading: restaurantLoading } = useRestaurant();
   const { subscriptionStatus } = useSubscription();
+  
+  console.log("🚀 Index.tsx: Estados:", { 
+    userLogged: !!user, 
+    loading, 
+    restaurantLoading, 
+    hasRestaurant: !!currentRestaurant,
+    userRole 
+  });
 
   useEffect(() => {
     if (!loading && !user) {
