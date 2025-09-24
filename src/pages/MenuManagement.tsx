@@ -32,20 +32,25 @@ const MenuManagement = () => {
       </div>
 
       <Tabs defaultValue="items" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="items" className="flex items-center gap-2">
-            <ChefHat className="h-4 w-4" />
-            Pratos
-          </TabsTrigger>
-          <TabsTrigger value="suggestions" className="flex items-center gap-2">
-            <AlertCircle className="h-4 w-4" />
-            Sugestões
-          </TabsTrigger>
-          <TabsTrigger value="analysis" className="flex items-center gap-2">
-            <BarChart3 className="h-4 w-4" />
-            Análise de Custos
-          </TabsTrigger>
-        </TabsList>
+        <div className="w-full overflow-x-auto">
+          <TabsList className="inline-flex w-full min-w-fit">
+            <TabsTrigger value="items" className="flex items-center gap-2 whitespace-nowrap px-4 py-2">
+              <ChefHat className="h-4 w-4" />
+              <span className="hidden sm:inline">Pratos</span>
+              <span className="sm:hidden">Pratos</span>
+            </TabsTrigger>
+            <TabsTrigger value="suggestions" className="flex items-center gap-2 whitespace-nowrap px-4 py-2">
+              <AlertCircle className="h-4 w-4" />
+              <span className="hidden sm:inline">Sugestões</span>
+              <span className="sm:hidden">Sugestões</span>
+            </TabsTrigger>
+            <TabsTrigger value="analysis" className="flex items-center gap-2 whitespace-nowrap px-4 py-2">
+              <BarChart3 className="h-4 w-4" />
+              <span className="hidden sm:inline">Análise de Custos</span>
+              <span className="sm:hidden">Custos</span>
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="items">
           <Card>
