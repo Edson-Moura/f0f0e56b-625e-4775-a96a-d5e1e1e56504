@@ -75,9 +75,7 @@ const Auth = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center container-mobile py-6">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center mb-4">
-            <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-16 w-32" />
-          </div>
+          <CardTitle className="text-2xl font-bold text-primary">RestaurantApp</CardTitle>
           <CardDescription>
             Gerencie seu restaurante de forma inteligente
           </CardDescription>

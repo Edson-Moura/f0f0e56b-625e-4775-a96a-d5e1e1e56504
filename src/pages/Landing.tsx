@@ -161,7 +161,7 @@ const Landing = () => {
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container-mobile mx-auto py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-8 w-12" />
+            <ChefHat className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold text-primary">FoodFlow</span>
           </div>
           <Button variant="outline" onClick={() => navigate('/auth')}>

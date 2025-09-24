@@ -266,7 +266,7 @@ const SupportTickets = () => {
                     <div className="flex items-center space-x-2">
                       <User className="h-4 w-4" />
                       <span className="font-medium text-sm">
-                        {response.is_staff_response ? 'Suporte FoodFlow' : 'Você'}
+                        {response.is_staff_response ? 'Suporte RestaurantApp' : 'Você'}
                       </span>
                     </div>
                     <span className="text-xs text-muted-foreground">
