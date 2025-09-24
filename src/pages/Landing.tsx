@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import HeroSection from '@/components/landing/HeroSection';
 import IntelligentFeaturesSection from '@/components/landing/IntelligentFeaturesSection';
+import restaurantBg from '@/assets/restaurant-bg.jpg';
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -29,32 +30,44 @@ const Landing = () => {
     {
       icon: Package,
       title: "Controle de Estoque Inteligente",
-      description: "Monitore ingredientes em tempo real com alertas automáticos de baixo estoque e datas de validade."
+      description: "Monitore ingredientes em tempo real com alertas automáticos de baixo estoque e datas de validade.",
+      color: "text-emerald-500",
+      bgColor: "bg-emerald-500/10"
     },
     {
       icon: ChefHat,
       title: "Gestão de Cardápio",
-      description: "Crie pratos, calcule custos baseados no inventário e receba sugestões de otimização."
+      description: "Crie pratos, calcule custos baseados no inventário e receba sugestões de otimização.",
+      color: "text-orange-500",
+      bgColor: "bg-orange-500/10"
     },
     {
       icon: BarChart3,
       title: "Relatórios Avançados",
-      description: "Dashboards com vendas, custos, performance de pratos e análise de lucratividade."
+      description: "Dashboards com vendas, custos, performance de pratos e análise de lucratividade.",
+      color: "text-blue-500",
+      bgColor: "bg-blue-500/10"
     },
     {
       icon: Users,
       title: "Gestão de Equipe",
-      description: "Controle de acesso por perfis: admin, gerente, chef, funcionário do estoque."
+      description: "Controle de acesso por perfis: admin, gerente, chef, funcionário do estoque.",
+      color: "text-purple-500",
+      bgColor: "bg-purple-500/10"
     },
     {
       icon: DollarSign,
       title: "Otimização de Preços",
-      description: "Ajuste inteligente de preços baseado em custos, demanda e metas de lucratividade."
+      description: "Ajuste inteligente de preços baseado em custos, demanda e metas de lucratividade.",
+      color: "text-green-500",
+      bgColor: "bg-green-500/10"
     },
     {
       icon: Shield,
       title: "Segurança Total",
-      description: "Backup automático, autenticação 2FA e logs de segurança para proteger seus dados."
+      description: "Backup automático, autenticação 2FA e logs de segurança para proteger seus dados.",
+      color: "text-red-500",
+      bgColor: "bg-red-500/10"
     }
   ];
 
@@ -166,7 +179,7 @@ const Landing = () => {
       {/* Features Section */}
       <section className="py-16 md:py-24">
         <div className="container-mobile mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Tudo que você precisa para gerenciar seu restaurante
             </h2>
@@ -177,12 +190,16 @@ const Landing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="border-2 hover:border-primary/20 transition-colors">
+              <Card 
+                key={index} 
+                className="border-2 hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-fade-in group"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <feature.icon className="h-6 w-6 text-primary" />
+                  <div className={`w-12 h-12 ${feature.bgColor} rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110`}>
+                    <feature.icon className={`h-6 w-6 ${feature.color} transition-all duration-300 group-hover:scale-110`} />
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base leading-relaxed">
@@ -196,67 +213,75 @@ const Landing = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container-mobile mx-auto">
+      <section 
+        className="py-16 md:py-24 relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${restaurantBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="container-mobile mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Por que escolher o FoodFlow?
               </h2>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-1">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                <div className="flex items-start space-x-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
+                  <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center shrink-0 mt-1 backdrop-blur-sm">
+                    <CheckCircle className="h-5 w-5 text-emerald-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Implementação Rápida</h3>
-                    <p className="text-muted-foreground">Configure seu restaurante em menos de 30 minutos e comece a usar imediatamente.</p>
+                    <h3 className="font-semibold text-lg mb-2 text-white">Implementação Rápida</h3>
+                    <p className="text-gray-300">Configure seu restaurante em menos de 30 minutos e comece a usar imediatamente.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-1">
-                    <Smartphone className="h-5 w-5 text-primary" />
+                <div className="flex items-start space-x-4 animate-fade-in" style={{ animationDelay: '400ms' }}>
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0 mt-1 backdrop-blur-sm">
+                    <Smartphone className="h-5 w-5 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Acesso Mobile</h3>
-                    <p className="text-muted-foreground">Gerencie seu restaurante de qualquer lugar com nossa interface responsiva.</p>
+                    <h3 className="font-semibold text-lg mb-2 text-white">Acesso Mobile</h3>
+                    <p className="text-gray-300">Gerencie seu restaurante de qualquer lugar com nossa interface responsiva.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-1">
-                    <Building2 className="h-5 w-5 text-primary" />
+                <div className="flex items-start space-x-4 animate-fade-in" style={{ animationDelay: '600ms' }}>
+                  <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center shrink-0 mt-1 backdrop-blur-sm">
+                    <Building2 className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Escalabilidade</h3>
-                    <p className="text-muted-foreground">Comece pequeno e cresça. Nosso sistema acompanha o crescimento do seu negócio.</p>
+                    <h3 className="font-semibold text-lg mb-2 text-white">Escalabilidade</h3>
+                    <p className="text-gray-300">Comece pequeno e cresça. Nosso sistema acompanha o crescimento do seu negócio.</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-card p-8 rounded-lg border">
+            <div className="bg-card/95 p-8 rounded-lg border backdrop-blur-sm shadow-xl animate-fade-in" style={{ animationDelay: '300ms' }}>
               <div className="text-center mb-6">
-                <div className="text-4xl font-bold text-primary mb-2">30 dias</div>
+                <div className="text-4xl font-bold text-primary mb-2 animate-pulse">30 dias</div>
                 <div className="text-muted-foreground">Teste grátis</div>
               </div>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary" />
+                <li className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: '500ms' }}>
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
                   <span>Acesso completo a todos os recursos</span>
                 </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary" />
+                <li className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: '600ms' }}>
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
                   <span>Suporte especializado</span>
                 </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary" />
+                <li className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: '700ms' }}>
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
                   <span>Sem compromisso ou taxa de cancelamento</span>
                 </li>
               </ul>
               <Button 
-                className="w-full" 
+                className="w-full hover:scale-105 transition-transform duration-300" 
                 size="lg"
                 onClick={() => navigate('/auth')}
               >
@@ -283,22 +308,29 @@ const Landing = () => {
             {plans.map((plan, index) => (
               <Card 
                 key={index} 
-                className={`relative ${plan.highlight ? 'border-primary border-2 shadow-lg' : 'border'}`}
+                className={`relative group hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-in ${
+                  plan.highlight ? 'border-primary border-2 shadow-lg' : 'border hover:border-primary/30'
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {plan.highlight && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 animate-pulse">
                     Mais Popular
                   </Badge>
                 )}
                 
                 <CardHeader className="text-center pb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <plan.icon className="h-6 w-6 text-primary" />
+                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 ${
+                    plan.highlight ? 'bg-primary/20' : 'bg-primary/10'
+                  }`}>
+                    <plan.icon className={`h-6 w-6 transition-all duration-300 group-hover:scale-110 ${
+                      plan.highlight ? 'text-primary' : 'text-primary'
+                    }`} />
                   </div>
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
                   <div className="flex items-baseline justify-center mt-4">
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-4xl font-bold group-hover:text-primary transition-colors duration-300">{plan.price}</span>
                     <span className="text-muted-foreground ml-1">{plan.period}</span>
                   </div>
                 </CardHeader>
@@ -306,15 +338,15 @@ const Landing = () => {
                 <CardContent className="space-y-6">
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <li key={featureIndex} className="flex items-start space-x-3 animate-fade-in" style={{ animationDelay: `${(index * 150) + (featureIndex * 50)}ms` }}>
+                        <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   
                   <Button 
-                    className={`w-full ${plan.highlight ? '' : 'variant-outline'}`}
+                    className={`w-full hover:scale-105 transition-all duration-300 ${plan.highlight ? '' : 'variant-outline'}`}
                     variant={plan.highlight ? 'default' : 'outline'}
                     size="lg"
                     onClick={() => navigate('/auth')}
@@ -351,14 +383,18 @@ const Landing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-2 hover:border-primary/20 transition-colors">
+              <Card 
+                key={index} 
+                className="border-2 hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-fade-in group"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <ChefHat className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                      <ChefHat className="h-6 w-6 text-primary transition-all duration-300 group-hover:scale-110" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                      <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">{testimonial.name}</CardTitle>
                       <CardDescription>
                         {testimonial.role} • {testimonial.restaurant}
                       </CardDescription>
@@ -366,7 +402,11 @@ const Landing = () => {
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                      <Star 
+                        key={i} 
+                        className="h-5 w-5 fill-yellow-400 text-yellow-400 transition-all duration-300 hover:scale-125" 
+                        style={{ animationDelay: `${i * 100}ms` }}
+                      />
                     ))}
                   </div>
                 </CardHeader>
