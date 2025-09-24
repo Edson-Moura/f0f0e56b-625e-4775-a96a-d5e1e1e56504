@@ -50,7 +50,7 @@ const Support = () => {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div className="flex items-center space-x-3">
-              <HelpCircle className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+              <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-7 w-11 sm:h-8 sm:w-13" />
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold text-primary">
                   Suporte ao Cliente

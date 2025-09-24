@@ -279,7 +279,7 @@ const ContactSupport = () => {
                 <Mail className="h-5 w-5 text-primary mt-1" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">suporte@restaurantapp.com</p>
+                  <p className="text-sm text-muted-foreground">suporte@foodflow.com</p>
                   <p className="text-xs text-muted-foreground mt-1">Resposta em até 24h</p>
                 </div>
               </div>

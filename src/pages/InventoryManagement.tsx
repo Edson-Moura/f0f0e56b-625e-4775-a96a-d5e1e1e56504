@@ -59,7 +59,7 @@ const InventoryManagement = () => {
           
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
             <div className="flex items-center space-x-3">
-              <Package className="h-7 w-7 text-primary" />
+              <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-7 w-11" />
               <div>
                 <h1 className="text-2xl font-bold text-primary">Gestão de Inventário</h1>
                 <p className="text-sm text-muted-foreground">Controle completo do estoque do restaurante</p>
