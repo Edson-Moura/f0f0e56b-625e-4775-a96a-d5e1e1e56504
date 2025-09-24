@@ -5,8 +5,9 @@ import { useRestaurant } from '@/hooks/useRestaurant';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Shield, Database, Eye, Lock } from 'lucide-react';
+import { ArrowLeft, Shield, Database, Eye, Lock, LogOut } from 'lucide-react';
 import LoadingScreen from '@/components/ui/loading-screen';
+import MobileNav from '@/components/ui/mobile-nav';
 import TwoFactorAuth from '@/components/security/TwoFactorAuth';
 import BackupManagement from '@/components/security/BackupManagement';
 import SecurityLogs from '@/components/security/SecurityLogs';
@@ -14,7 +15,7 @@ import ActiveSessions from '@/components/security/ActiveSessions';
 
 const Security = () => {
   const navigate = useNavigate();
-  const { user, loading } = useAuth();
+  const { user, loading, signOut } = useAuth();
   const { currentRestaurant, userRole, loading: restaurantLoading } = useRestaurant();
 
   useEffect(() => {
@@ -40,25 +41,39 @@ const Security = () => {
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container-mobile mx-auto py-3 sm:py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
+            <MobileNav />
             <Button 
               variant="ghost" 
               size="sm" 
               onClick={() => navigate('/')}
-              className="mr-2"
+              className="hidden sm:flex items-center space-x-2"
             >
               <ArrowLeft className="h-4 w-4" />
+              <span>Voltar</span>
             </Button>
             <div className="flex items-center space-x-3">
               <Shield className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-primary">
+                <h1 className="text-lg sm:text-2xl font-bold text-primary">
                   Segurança de Dados
                 </h1>
-                <p className="text-sm text-muted-foreground hidden sm:block">
-                  {currentRestaurant.name}
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {currentRestaurant?.name || 'Sistema de Gestão'}
                 </p>
               </div>
             </div>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={signOut}
+              className="hidden md:flex items-center space-x-2"
+            >
+              <LogOut className="h-4 w-4" />
+              <span>Sair</span>
+            </Button>
           </div>
         </div>
       </header>
