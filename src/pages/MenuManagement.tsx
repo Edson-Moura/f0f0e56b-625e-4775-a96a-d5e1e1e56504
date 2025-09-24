@@ -32,18 +32,19 @@ const MenuManagement = () => {
       </div>
 
       <Tabs defaultValue="items" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="items" className="flex items-center gap-2">
-            <ChefHat className="h-4 w-4" />
-            Pratos
+        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto">
+          <TabsTrigger value="items" className="flex items-center gap-2 justify-center text-sm px-2 py-3">
+            <ChefHat className="h-4 w-4 sm:h-4 sm:w-4" />
+            <span className="whitespace-nowrap">Pratos</span>
           </TabsTrigger>
-          <TabsTrigger value="suggestions" className="flex items-center gap-2">
-            <AlertCircle className="h-4 w-4" />
-            Sugestões
+          <TabsTrigger value="suggestions" className="flex items-center gap-2 justify-center text-sm px-2 py-3">
+            <AlertCircle className="h-4 w-4 sm:h-4 sm:w-4" />
+            <span className="whitespace-nowrap">Sugestões</span>
           </TabsTrigger>
-          <TabsTrigger value="analysis" className="flex items-center gap-2">
-            <BarChart3 className="h-4 w-4" />
-            Análise de Custos
+          <TabsTrigger value="analysis" className="flex items-center gap-2 justify-center text-sm px-2 py-3">
+            <BarChart3 className="h-4 w-4 sm:h-4 sm:w-4" />
+            <span className="whitespace-nowrap sm:hidden">Custos</span>
+            <span className="hidden sm:inline whitespace-nowrap">Análise de Custos</span>
           </TabsTrigger>
         </TabsList>
 
