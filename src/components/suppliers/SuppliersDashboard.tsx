@@ -29,16 +29,17 @@ export const SuppliersDashboard = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold">Gestão de Fornecedores</h1>
           <p className="text-muted-foreground">
             Gerencie seus fornecedores e histórico de compras
           </p>
         </div>
-        <Button onClick={() => setShowForm(true)} className="flex items-center gap-2">
+        <Button onClick={() => setShowForm(true)} className="flex items-center gap-2 shrink-0">
           <Plus className="h-4 w-4" />
-          Novo Fornecedor
+          <span className="sm:hidden">Novo</span>
+          <span className="hidden sm:inline">Novo Fornecedor</span>
         </Button>
       </div>
 
