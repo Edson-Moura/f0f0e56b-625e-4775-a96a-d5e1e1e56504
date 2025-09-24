@@ -116,10 +116,7 @@ const MobileNav = () => {
       <SheetContent side="left" className="w-80">
         <SheetHeader className="text-left">
           <div className="flex items-center space-x-3 mb-6">
-            <img src="src/assets/logo-foodflow-new.png" alt="Logo" className="h-24 w-24" />
-            <div>
-              <p className="text-sm text-muted-foreground">Sistema de Gestão</p>
-            </div>
+            <img src="src/assets/logo-foodflow-new.png" alt="Logo" className="h-24 w-40" />
           </div>
         </SheetHeader>
 
