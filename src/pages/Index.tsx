@@ -73,7 +73,7 @@ const Index = () => {
           <div className="flex items-center space-x-3">
             <MobileNav />
             <div className="flex items-center space-x-3">
-              <img src="src/assets/logo-foodflow.png" alt="Logo" className="h-7 w-7 sm:h-8 sm:w-8" />
+              <img src="src/assets/logo-foodflow.png" alt="Logo" className="h-20 w-20 sm:h-24 sm:w-24" />
               <div className="hidden sm:block">
                 <p className="text-sm text-muted-foreground">Sistema de Gestão</p>
               </div>
