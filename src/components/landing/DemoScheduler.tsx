@@ -91,7 +91,7 @@ const DemoScheduler = ({ children }: DemoSchedulerProps) => {
             <span>Agendar Demonstração</span>
           </DialogTitle>
           <DialogDescription>
-            Agende uma demonstração personalizada do FoodFlow para seu restaurante. 
+            Agende uma demonstração personalizada para seu restaurante. 
             Nosso especialista irá mostrar como o sistema pode otimizar sua gestão.
           </DialogDescription>
         </DialogHeader>

@@ -73,11 +73,8 @@ const Index = () => {
           <div className="flex items-center space-x-3">
             <MobileNav />
             <div className="flex items-center space-x-3">
-              <ChefHat className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+              <img src="src/assets/logo-foodflow.png" alt="Logo" className="h-7 w-7 sm:h-8 sm:w-8" />
               <div className="hidden sm:block">
-                <h1 className="text-xl sm:text-2xl font-bold text-primary">
-                  {currentRestaurant?.name || 'FoodFlow'}
-                </h1>
                 <p className="text-sm text-muted-foreground">Sistema de Gestão</p>
               </div>
             </div>
