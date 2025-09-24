@@ -449,8 +449,7 @@ const Landing = () => {
             {/* Logo e Descrição */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-8 w-12" />
-                <span className="font-bold text-lg">FoodFlow</span>
+                <img src="src/assets/logo-foodflow-new.png" alt="FoodFlow Logo" className="h-20 w-44 sm:h-24 sm:w-52" />
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 Sistema completo de gestão para restaurantes. Controle estoque, cardápio, preços e muito mais.
