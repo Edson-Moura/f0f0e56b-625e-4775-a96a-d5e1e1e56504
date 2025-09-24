@@ -61,18 +61,19 @@ export const MenuItemList = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center gap-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <Input
           placeholder="Buscar pratos..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="max-w-sm"
+          className="w-full sm:max-w-sm"
         />
         <Button
           onClick={() => {
             setSelectedItem(null);
             setShowForm(true);
           }}
+          className="shrink-0"
         >
           <Plus className="h-4 w-4 mr-2" />
           Adicionar Prato

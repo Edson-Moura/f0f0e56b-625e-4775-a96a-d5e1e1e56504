@@ -51,14 +51,14 @@ export const MenuSuggestions = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div>
           <h3 className="text-lg font-semibold">Sugestões Ativas</h3>
           <p className="text-sm text-muted-foreground">
             {menuSuggestions.length} sugestões pendentes
           </p>
         </div>
-        <Button onClick={handleGenerateSuggestions}>
+        <Button onClick={handleGenerateSuggestions} className="shrink-0">
           <RefreshCw className="h-4 w-4 mr-2" />
           Atualizar Sugestões
         </Button>
