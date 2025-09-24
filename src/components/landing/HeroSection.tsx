@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp, ArrowRight, Clock } from 'lucide-react';
+import DemoScheduler from './DemoScheduler';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -36,16 +37,22 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6"
+            className="text-lg px-8 py-6 hover:scale-105 transition-transform duration-300"
             onClick={() => navigate('/auth')}
           >
             Experimentar Grátis
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-            <Clock className="mr-2 h-5 w-5" />
-            Agendar Demo
-          </Button>
+          <DemoScheduler>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6 hover:scale-105 transition-transform duration-300"
+            >
+              <Clock className="mr-2 h-5 w-5" />
+              Agendar Demo
+            </Button>
+          </DemoScheduler>
         </div>
 
         {/* Stats */}
